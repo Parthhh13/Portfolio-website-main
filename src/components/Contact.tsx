@@ -1,5 +1,4 @@
-
-import { useState } from 'react';
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -41,12 +40,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-portfolio-lightGray">
+    <section id="contact" className="py-16 md:py-24 bg-background text-foreground">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-portfolio-darkGray mb-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 text-center">
           Get In Touch
         </h2>
-        <p className="text-portfolio-gray text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
           Feel free to reach out for opportunities, collaborations, or just to say hello!
         </p>
 
@@ -55,29 +54,29 @@ const Contact = () => {
             <div className="flex items-start space-x-4">
               <Mail className="h-6 w-6 text-portfolio-blue mt-1" />
               <div>
-                <h3 className="font-medium text-portfolio-darkGray">Email</h3>
-                <p className="text-portfolio-gray">parthpahwa1301@gmail.com</p>
+                <h3 className="font-medium text-white">Email</h3>
+                <p className="text-gray-300">parthpahwa1301@gmail.com</p>
               </div>
             </div>
             
             <div className="flex items-start space-x-4">
               <Phone className="h-6 w-6 text-portfolio-blue mt-1" />
               <div>
-                <h3 className="font-medium text-portfolio-darkGray">Phone</h3>
-                <p className="text-portfolio-gray">+91 7835938373</p>
+                <h3 className="font-medium text-white">Phone</h3>
+                <p className="text-gray-300">+91 7835938373</p>
               </div>
             </div>
             
             <div className="flex items-start space-x-4">
               <MapPin className="h-6 w-6 text-portfolio-blue mt-1" />
               <div>
-                <h3 className="font-medium text-portfolio-darkGray">Location</h3>
-                <p className="text-portfolio-gray">Sector-11, Rohini, New Delhi, India</p>
+                <h3 className="font-medium text-white">Location</h3>
+                <p className="text-gray-300">Sector-11, Rohini, New Delhi, India</p>
               </div>
             </div>
 
             <div className="pt-6">
-              <h3 className="font-medium text-portfolio-darkGray mb-4">Connect with me</h3>
+              <h3 className="font-medium text-white mb-4">Connect with me</h3>
               <div className="flex space-x-4">
                 <Button variant="outline" size="icon" className="rounded-full">
                   <Github className="h-5 w-5" />
@@ -90,10 +89,10 @@ const Contact = () => {
           </div>
 
           <div className="md:col-span-2">
-            <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 rounded-lg shadow-sm">
+            <form onSubmit={handleSubmit} className="space-y-4 bg-[#181f2a] p-6 rounded-lg shadow-sm">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="name">Name</Label>
+                  <Label htmlFor="name" className="text-white">Name</Label>
                   <Input 
                     id="name" 
                     name="name" 
@@ -103,7 +102,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email" className="text-white">Email</Label>
                   <Input 
                     id="email" 
                     name="email" 
@@ -116,7 +115,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <Label htmlFor="subject">Subject</Label>
+                <Label htmlFor="subject" className="text-white">Subject</Label>
                 <Input 
                   id="subject" 
                   name="subject" 
@@ -127,7 +126,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <Label htmlFor="message">Message</Label>
+                <Label htmlFor="message" className="text-white">Message</Label>
                 <Textarea 
                   id="message" 
                   name="message"

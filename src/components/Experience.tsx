@@ -57,9 +57,9 @@ const Experience = () => {
   const activeExperience = experiences.find(exp => exp.id === activeTab);
 
   return (
-    <section id="experience" className="py-16 md:py-24">
+    <section id="experience" className="py-16 md:py-24 bg-background text-foreground">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-portfolio-darkGray mb-12 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-12 text-center">
           Where I've Worked
         </h2>
         
@@ -91,19 +91,19 @@ const Experience = () => {
                   <img src={activeExperience.logo} alt={`${activeExperience.company} logo`} className="h-full w-full object-cover" />
                 </Avatar>
                 <div>
-                  <h3 className="text-xl font-bold text-portfolio-darkGray">
+                  <h3 className="text-xl font-bold text-white">
                     {activeExperience.position} <span className="text-portfolio-blue">@ {activeExperience.company}</span>
                   </h3>
-                  <p className="text-sm text-portfolio-gray mb-1">{activeExperience.period}</p>
-                  <p className="text-sm text-portfolio-gray">{activeExperience.location}</p>
+                  <p className="text-sm text-gray-300 mb-1">{activeExperience.period}</p>
+                  <p className="text-sm text-gray-300">{activeExperience.location}</p>
                 </div>
               </div>
               
               <ul className="space-y-2 mb-4">
                 {activeExperience.description.map((item, i) => (
                   <li key={i} className="flex items-start">
-                    <span className="text-portfolio-blue mr-2">▹</span>
-                    <span className="text-portfolio-gray">{item}</span>
+                    <span className="text-gray-300 mr-2">▹</span>
+                    <span className="text-gray-300">{item}</span>
                   </li>
                 ))}
               </ul>

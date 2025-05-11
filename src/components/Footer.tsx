@@ -11,7 +11,7 @@ const Footer = () => {
           </p>
           
           <p className="text-portfolio-gray text-sm mt-2 md:mt-0">
-            AI & ML Engineer | parthpahwa9301@gmail.com
+            AI & ML Engineer | parthpahwa1301@gmail.com
           </p>
         </div>
       </div>

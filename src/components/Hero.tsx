@@ -3,17 +3,17 @@ import { ArrowRight, Download } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id="hero" className="pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-20">
+    <section id="hero" className="pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-20 bg-background text-foreground">
       <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
         <div className="md:w-3/5 space-y-6 animate-fade-in">
           <p className="text-portfolio-blue font-medium">Hello, my name is</p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-portfolio-darkGray">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-white">
             Parth Pahwa
           </h1>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-portfolio-gray">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-gray-200">
             AI & ML Engineer
           </h2>
-          <p className="text-lg text-portfolio-gray max-w-2xl">
+          <p className="text-lg text-gray-300 max-w-2xl">
             Final year B.Tech student specializing in Artificial Intelligence with a strong academic record and a portfolio of impactful AI projects. 
             Proficient in Machine Learning, Deep Learning, NLP, and Computer Vision, with hands-on experience building real-world solutions.
           </p>

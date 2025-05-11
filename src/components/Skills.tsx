@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Code, Database, BookOpen, Laptop, School, Book } from "lucide-react";
 
@@ -39,10 +38,10 @@ const Skills = () => {
   return (
     <section id="skills" className="py-16 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-portfolio-darkGray mb-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 text-center">
           Skills & Expertise
         </h2>
-        <p className="text-portfolio-gray text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-white text-center mb-12 max-w-2xl mx-auto">
           My technical and soft skills that I've developed through academic projects, 
           internships, and personal interests.
         </p>
@@ -53,7 +52,7 @@ const Skills = () => {
               <CardContent className="p-6">
                 <div className="flex flex-col items-center mb-4">
                   {category.icon}
-                  <h3 className="text-xl font-bold text-portfolio-darkGray">{category.title}</h3>
+                  <h3 className="text-xl font-bold text-white">{category.title}</h3>
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, i) => (

@@ -52,12 +52,12 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-16 md:py-24 bg-portfolio-lightGray">
+    <section id="projects" className="py-16 md:py-24 bg-background text-foreground">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-portfolio-darkGray mb-4 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 text-center">
           Featured Projects
         </h2>
-        <p className="text-portfolio-gray text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-white text-center mb-12 max-w-2xl mx-auto">
           Here are some of my key projects showcasing my expertise in AI, Machine Learning, 
           and software development.
         </p>
@@ -73,8 +73,8 @@ const Projects = () => {
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-portfolio-darkGray mb-2">{project.title}</h3>
-                <p className="text-portfolio-gray mb-4 line-clamp-3">{project.description}</p>
+                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                <p className="text-white mb-4 line-clamp-3">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, i) => (
