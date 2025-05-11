@@ -6,24 +6,29 @@ const About = () => {
           <div className="md:w-1/2 space-y-4 animate-fade-in">
             <h2 className="text-3xl md:text-4xl font-bold font-heading text-white">About Me</h2>
             <p className="text-white">
-              I'm Parth Pahwa, a final-year B.Tech student specializing in Artificial Intelligence 
-              at NIIT University, Neemrana, Rajasthan. My academic journey has been focused on 
-              developing expertise in various domains of AI.
+            I’m Parth Pahwa, a final-year B.Tech student specializing in Artificial Intelligence 
+            at NIIT University, Neemrana. With a robust academic foundation and a portfolio of 
+            impactful AI projects, I’m not just focused on learning — I’m focused on delivering results.
             </p>
             <p className="text-white">
-              With a strong foundation in Machine Learning, Deep Learning, NLP, and Computer Vision, 
-              I've worked on multiple impactful projects that solve real-world problems. 
-              My experiences at 1Stop, Labmentix, and as a Teaching Assistant have further 
-              strengthened my technical and soft skills.
+            Proficient in Machine Learning, Deep Learning, NLP, and Computer Vision,
+            I’ve honed my skills in both building intelligent models and deploying 
+            them at scale. My expertise extends to full-stack development (React, Flask, Node.js)
+            and DevOps (Docker, CI/CD), enabling me to take AI solutions from concept to production 
+            seamlessly. With a hands-on approach, I’ve worked on real-world projects that solve complex 
+            problems and create tangible value.
             </p>
             <p className="text-white">
-              I'm passionate about exploring all domains of AI and continuously expanding my 
-              knowledge. My problem-solving abilities, leadership skills, and effective communication 
-              have been key to my success in team projects and academic pursuits.
+            Throughout my journey, I’ve had the privilege of working with innovative teams at 1Stop and Labmentix, as well as serving as a Teaching Assistant, where I further developed my leadership and communication skills. I thrive in collaborative environments and have consistently demonstrated my ability to lead, solve problems, and drive projects to successful outcomes.
             </p>
             <p className="text-white">
-              When I'm not coding or working on AI projects, I pursue my interest in theater arts, 
-              where I find joy in creative expression and performance.
+            I’m passionate about leveraging Generative AI to supercharge my productivity and deliver results faster than most could imagine. Whether it’s building models, developing applications, or optimizing workflows, I consistently deliver high-quality solutions with unmatched efficiency.
+            </p>
+            <p className="text-white">
+            When I’m not building the future of AI, you’ll find me expressing my creativity through theater arts, where I channel my passion for storytelling and performance.
+            </p>
+            <p className="text-white">
+            I am confident that my blend of AI expertise, development skills, and relentless drive to innovate will make me your best investment. Let’s build something extraordinary together.
             </p>
           </div>
           
@@ -34,7 +39,7 @@ const About = () => {
               {/* Image container */}
               <div className="relative w-full h-full rounded-lg overflow-hidden z-10 shadow-lg">
                 <img 
-                  src="/images/profile/Formal 1.jpg" 
+                  src="/Portfolio-website-main/images/profile/Formal 1.jpg" 
                   alt="Parth Pahwa" 
                   className="w-full h-full object-cover rounded-lg"
                 />

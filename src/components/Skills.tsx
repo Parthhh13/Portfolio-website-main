@@ -1,39 +1,38 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Code, Database, BookOpen, Laptop, School, Book } from "lucide-react";
+import { Code, Database, BookOpen, Laptop, Rocket, Book } from "lucide-react";
 
 const skillsCategories = [
   {
-    title: "Artificial Intelligence",
+    title: "Artificial Intelligence & Machine Learning",
     icon: <Laptop className="h-6 w-6 text-portfolio-blue mb-2" />,
     skills: ["Machine Learning", "Deep Learning", "NLP", "Computer Vision", "Predictive Analytics"]
   },
   {
-    title: "Programming & Frameworks",
+    title: "Full-Stack Development",
     icon: <Code className="h-6 w-6 text-portfolio-blue mb-2" />,
-    skills: ["Python", "JavaScript", "MongoDB", "React", "Express.js", "Node.js", "HTML/CSS", "SQL", "TensorFlow"]
+    skills: ["Python", "JavaScript", "React", "Node.js", "Express.js", "MongoDB", "HTML/CSS"]
   },
   {
-    title: "Data Science",
+    title: "Data Science & Analysis",
     icon: <Database className="h-6 w-6 text-portfolio-blue mb-2" />,
     skills: ["Data Structures", "Data Analysis", "Pandas", "NumPy", "Scikit-learn", "Data Visualization"]
   },
   {
-    title: "Specialized Skills",
+    title: "Tools & Technologies",
     icon: <BookOpen className="h-6 w-6 text-portfolio-blue mb-2" />,
-    skills: ["IoT", "Java", "OpenCV", "Git", "Streamlit", "Flask", "RESTful APIs", "FAISS"]
+    skills: ["TensorFlow", "Flask", "Git", "Streamlit", "RESTful APIs", "FAISS"]
   },
   {
-    title: "Education",
-    icon: <School className="h-6 w-6 text-portfolio-blue mb-2" />,
-    skills: ["B.Tech in Computer Science (AI Specialization)", "NIIT University", "GPA: 8.18/10"]
+    title: "Generative AI & Automation",
+    icon: <Rocket className="h-6 w-6 text-portfolio-blue mb-2" />,
+    skills: ["Generative AI", "AI-powered content generation", "Automated coding", "Rapid prototyping", "Task automation"]
   },
   {
     title: "Soft Skills",
     icon: <Book className="h-6 w-6 text-portfolio-blue mb-2" />,
-    skills: ["Leadership", "Communication", "Teamwork", "Problem Solving", "Time Management", "Theatre Arts"]
+    skills: ["Leadership", "Communication", "Teamwork", "Public Speaking","Problem Solving", "Time Management", "Theatre Arts"]
   }
 ];
-
 const Skills = () => {
   return (
     <section id="skills" className="py-16 md:py-24">

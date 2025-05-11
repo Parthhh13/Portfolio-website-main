@@ -11,11 +11,12 @@ const Hero = () => {
             Parth Pahwa
           </h1>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-heading text-gray-200">
-            AI & ML Engineer
+            AI & Software Engineer
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl">
-            Final year B.Tech student specializing in Artificial Intelligence with a strong academic record and a portfolio of impactful AI projects. 
-            Proficient in Machine Learning, Deep Learning, NLP, and Computer Vision, with hands-on experience building real-world solutions.
+            Final year B.Tech student specializing in AI with a strong academic record and a portfolio of impactful  projects. <br />
+            Proficient in ML, DL, NLP, and CV, with hands-on experience in full-stack development (React, Flask, Node.js). 
+            I build scalable, intelligent solutions and leverage Gen-AI to accelerate development and deliver results efficiently.
           </p>
           <div className="flex flex-wrap gap-4 pt-2">
             <Button asChild className="flex items-center gap-2 group">
@@ -25,7 +26,7 @@ const Hero = () => {
             </Button>
             <Button variant="outline" className="flex items-center gap-2">
               <Download className="h-4 w-4" /> 
-              <a href="public\documents\ParthPahwaFResume.pdf" download>Download Resume</a>
+              <a href="/Portfolio-website-main/documents/ParthPahwaFResume.pdf" download>Download Resume</a>
             </Button>
           </div>
         </div>
@@ -33,7 +34,7 @@ const Hero = () => {
           <div className="relative">
             <div className="bg-portfolio-lightBlue w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-lg">
               <img 
-                src="public\images\profile\Formal 1.jpg" 
+                src="/Portfolio-website-main/images/profile/Formal 1.jpg" 
                 alt="Parth Pahwa" 
                 className="w-full h-full object-cover"
               />

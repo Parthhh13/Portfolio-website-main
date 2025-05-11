@@ -7,22 +7,21 @@ const experiences = [
   {
     id: "exp1",
     company: "Labmentix",
-    logo: "public/images/companies/Labmentix.png",
+    logo: "/Portfolio-website-main/images/companies/Labmentix.png",
     position: "AI and ML Intern",
     period: "May 2023 - Present",
     location: "Gurugram, Haryana",
     description: [
-      "Gaining practical experience working on industry projects",
-      "Applying machine learning and AI techniques to solve real-world problems",
-      "Working with professional teams in a corporate environment",
-      "Developing scalable solutions with modern AI frameworks"
+      "Collaborating with Industry Experts: Engaging with seasoned professionals to gain practical insights and mentorship in AI applications",
+      "Hands-on Project Development: Working on live AI projects to apply theoretical knowledge to real-world scenarios.",
+      "Skill Enhancement and Certification: Participating in Labmentix's structured internship program to acquire industry-recognized certifications and enhance employability"
     ],
     technologies: ["Python", "Machine Learning", "Deep Learning", "Computer Vision"]
   },
   {
     id: "exp2",
     company: "NIIT University",
-    logo: "/images/companies/NIIT.png",
+    logo: "/Portfolio-website-main/images/companies/NIIT.png",
     position: "Teaching Assistant",
     period: "Feb 2023 - May 2023",
     location: "Neemrana, Rajasthan",
@@ -37,15 +36,14 @@ const experiences = [
   {
     id: "exp3",
     company: "1Stop",
-    logo: "public/images/companies/1Stop_logo_New.png",
+    logo: "/Portfolio-website-main/images/companies/1Stop_logo_New.png",
     position: "Artificial Intelligence Intern",
     period: "June 2022 - August 2022",
     location: "New Delhi, India",
     description: [
-      "Gained hands-on experience working on Real Life AI & ML Projects",
-      "Developed and implemented machine learning models for various applications",
-      "Collaborated with team members to solve complex problems",
-      "Acquired practical knowledge of industry-standard tools and practices"
+      "Gained expertise in NumPy, Pandas, TensorFlow, and Keras for efficient data manipulation and model development",
+      "Developed and deployed two live projects: Text Classification and Pet Classification, leveraging both ML and DL models to deliver real-world solutions",
+      "Applied industry-standard practices to preprocess data, train models, and evaluate performance metrics"
     ],
     technologies: ["Machine Learning", "AI", "Data Analysis", "Python"]
   }

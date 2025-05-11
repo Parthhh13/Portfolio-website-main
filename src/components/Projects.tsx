@@ -10,7 +10,7 @@ const projects = [
     technologies: ["Machine Learning", "Security", "Python", "Data Analysis"],
     liveLink: "#",
     githubLink: "#",
-    image: "/images/projects/ML IDS.jpg"
+    image: "/Portfolio-website-main/images/projects/ML IDS.jpg"
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const projects = [
     technologies: ["RAG", "LLMs", "FAISS", "Streamlit", "Blockchain"],
     liveLink: "#",
     githubLink: "#",
-    image: "/images/projects/RAG.jpg"
+    image: "/Portfolio-website-main/images/projects/RAG.jpg"
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const projects = [
     technologies: ["AI", "Full-Stack", "Predictive Analytics", "Inventory Management"],
     liveLink: "#",
     githubLink: "#",
-    image: "/images/projects/Supermarket.png"
+    image: "/Portfolio-website-main/images/projects/Supermarket.png"
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const projects = [
     technologies: ["Computer Vision", "ML", "API", "Image Processing"],
     liveLink: "#",
     githubLink: "#",
-    image: "/images/projects/Plant.jpg"
+    image: "/Portfolio-website-main/images/projects/Plant.jpg"
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const projects = [
     technologies: ["IoT", "Database Design", "Data Management"],
     liveLink: "#",
     githubLink: "#",
-    image: "/images/projects/Iot based fitness tracker.jpg"
+    image: "/Portfolio-website-main/images/projects/Iot based fitness tracker.jpg"
   }
 ];
 
@@ -74,7 +74,7 @@ const Projects = () => {
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-white mb-4 line-clamp-3">{project.description}</p>
+                <p className="text-white mb-4">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, i) => (

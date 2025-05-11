@@ -70,7 +70,7 @@ const Navbar = () => {
                 <a href="#contact" className="text-portfolio-darkGray hover:text-portfolio-blue font-medium transition-colors px-4 py-2">Contact</a>
                 <Button className="w-full flex items-center gap-2 justify-center">
                   <Download className="h-4 w-4" /> 
-                  <a href="public\documents\ParthPahwaFResume.pdf" download>Resume</a>
+                  <a href="/Portfolio-website-main/documents/ParthPahwaFResume.pdf" download>Resume</a>
                 </Button>
               </div>
             </div>
