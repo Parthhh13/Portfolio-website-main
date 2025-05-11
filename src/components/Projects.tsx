@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Github, Code } from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const projects = [
   {
@@ -51,55 +53,106 @@ const projects = [
 ];
 
 const Projects = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [50, 0, 0, -50]);
+
   return (
-    <section id="projects" className="py-16 md:py-24 bg-background text-foreground">
+    <motion.section 
+      ref={ref}
+      style={{ opacity, scale, y }}
+      id="projects" 
+      className="py-16 md:py-24 bg-background text-foreground"
+    >
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 text-center">
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 text-center"
+        >
           Featured Projects
-        </h2>
-        <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+        </motion.h2>
+        <motion.p 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-white text-center mb-12 max-w-2xl mx-auto"
+        >
           Here are some of my key projects showcasing my expertise in AI, Machine Learning, 
           and software development.
-        </p>
+        </motion.p>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <Card key={project.id} className="overflow-hidden hover:shadow-lg transition-shadow animate-fade-in">
-              <div className="h-48 bg-portfolio-blue/20 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                <p className="text-white mb-4">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, i) => (
-                    <span key={i} className="px-2 py-1 bg-portfolio-lightBlue text-portfolio-blue text-xs rounded-full">
-                      {tech}
-                    </span>
-                  ))}
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
+              <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-background/50 backdrop-blur-sm border border-white/10 h-[550px] flex flex-col">
+                <div className="h-48 bg-portfolio-blue/20 overflow-hidden relative">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="flex gap-4">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm"
+                        asChild
+                      >
+                        <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4" />
+                          Demo
+                        </a>
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm"
+                        asChild
+                      >
+                        <a href="https://github.com/Parthhh13" target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4" />
+                          Code
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
                 </div>
-                
-                <div className="flex gap-4 mt-4">
-                  <Button variant="outline" size="sm" className="flex items-center gap-2">
-                    <ExternalLink className="h-4 w-4" />
-                    Demo
-                  </Button>
-                  <Button variant="outline" size="sm" className="flex items-center gap-2">
-                    <Github className="h-4 w-4" />
-                    Code
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
+                <CardContent className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-portfolio-blue transition-colors duration-300">{project.title}</h3>
+                  <p className="text-white mb-4 flex-grow">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech, i) => (
+                      <motion.span 
+                        key={i}
+                        whileHover={{ scale: 1.05 }}
+                        className="px-2 py-1 bg-portfolio-lightBlue/20 text-portfolio-blue text-xs rounded-full hover:bg-portfolio-lightBlue/40 transition-colors duration-300"
+                      >
+                        {tech}
+                      </motion.span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

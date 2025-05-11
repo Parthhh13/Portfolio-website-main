@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { cn } from '@/lib/utils';
 import { Avatar } from "@/components/ui/avatar";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const experiences = [
   {
@@ -51,19 +53,43 @@ const experiences = [
 
 const Experience = () => {
   const [activeTab, setActiveTab] = useState(experiences[0].id);
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [50, 0, 0, -50]);
 
   const activeExperience = experiences.find(exp => exp.id === activeTab);
 
   return (
-    <section id="experience" className="py-16 md:py-24 bg-background text-foreground">
+    <motion.section
+      ref={ref}
+      style={{ opacity, scale, y }}
+      id="experience"
+      className="py-16 md:py-24 bg-background/50 text-foreground"
+    >
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-12 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-4xl font-bold font-heading text-white mb-12 text-center"
+        >
           Where I've Worked
-        </h2>
+        </motion.h2>
         
         <div className="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
           {/* Tabs */}
-          <div className="md:w-1/4 flex md:flex-col overflow-x-auto md:overflow-visible space-x-4 md:space-x-0 md:space-y-1 pb-4 md:pb-0">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="md:w-1/4 flex md:flex-col overflow-x-auto md:overflow-visible space-x-4 md:space-x-0 md:space-y-1 pb-4 md:pb-0"
+          >
             {experiences.map((exp) => (
               <Button
                 key={exp.id}
@@ -79,11 +105,17 @@ const Experience = () => {
                 {exp.company}
               </Button>
             ))}
-          </div>
+          </motion.div>
           
           {/* Content */}
           {activeExperience && (
-            <div className="md:w-3/4 animate-fade-in">
+            <motion.div
+              key={activeTab}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="md:w-3/4"
+            >
               <div className="flex items-start gap-4 mb-4">
                 <Avatar className="h-16 w-16 border border-gray-200">
                   <img src={activeExperience.logo} alt={`${activeExperience.company} logo`} className="h-full w-full object-cover" />
@@ -99,25 +131,38 @@ const Experience = () => {
               
               <ul className="space-y-2 mb-4">
                 {activeExperience.description.map((item, i) => (
-                  <li key={i} className="flex items-start">
+                  <motion.li 
+                    key={i} 
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: i * 0.1 }}
+                    className="flex items-start"
+                  >
                     <span className="text-gray-300 mr-2">▹</span>
                     <span className="text-gray-300">{item}</span>
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
               
               <div className="flex flex-wrap gap-2 mt-4">
                 {activeExperience.technologies.map((tech, i) => (
-                  <span key={i} className="px-3 py-1 bg-portfolio-lightBlue text-portfolio-blue text-sm rounded-full">
+                  <motion.span 
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: i * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                    className="px-3 py-1 bg-portfolio-lightBlue/20 text-portfolio-blue text-sm rounded-full hover:bg-portfolio-lightBlue/40 transition-colors duration-300"
+                  >
                     {tech}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

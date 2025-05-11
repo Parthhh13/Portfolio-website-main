@@ -6,6 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 import emailjs from 'emailjs-com';
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +16,16 @@ const Contact = () => {
     subject: '',
     message: ''
   });
+
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
+  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [50, 0, 0, -50]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -56,14 +68,30 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-background text-foreground">
+    <motion.section
+      ref={ref}
+      style={{ opacity, scale, y }}
+      id="contact"
+      className="py-16 md:py-24 bg-background/50 text-foreground"
+    >
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 text-center">
-          Get In Touch
-        </h2>
-        <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-          Feel free to reach out for opportunities, collaborations, or just to say hello!
-        </p>
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 text-center"
+        >
+          Get in Touch
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-white text-center mb-12 max-w-2xl mx-auto"
+        >
+          Have a project in mind or want to discuss potential opportunities? 
+          Feel free to reach out!
+        </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <div className="space-y-6 md:col-span-1">
@@ -94,11 +122,25 @@ const Contact = () => {
             <div className="pt-6">
               <h3 className="font-medium text-white mb-4">Connect with me</h3>
               <div className="flex space-x-4">
-                <Button variant="outline" size="icon" className="rounded-full">
-                  <Github className="h-5 w-5" />
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="rounded-full"
+                  asChild
+                >
+                  <a href="https://github.com/Parthhh13" target="_blank" rel="noopener noreferrer">
+                    <Github className="h-5 w-5" />
+                  </a>
                 </Button>
-                <Button variant="outline" size="icon" className="rounded-full">
-                  <Linkedin className="h-5 w-5" />
+                <Button 
+                  variant="outline" 
+                  size="icon" 
+                  className="rounded-full"
+                  asChild
+                >
+                  <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="h-5 w-5" />
+                  </a>
                 </Button>
               </div>
             </div>
@@ -160,7 +202,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
