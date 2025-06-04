@@ -21,7 +21,7 @@ const projects = [
     technologies: ["React", "Node.js", "MongoDB",  "Express.js", "Tailwind CSS"],
     liveLink: "#",
     githubLink: "#",
-    image: "/Portfolio-website-main/images/projects/Pet.jpg"
+    image: "/Portfolio-website-main/images/projects/Pet.png"
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const projects = [
     technologies: ["RAG", "LLMs", "Django", "React", "Tailwind CSS", "Python"],
     liveLink: "#",
     githubLink: "#",
-    image: "/Portfolio-website-main/images/projects/digibuddy.jpg"
+    image: "/Portfolio-website-main/images/projects/digibuddy.png"
   },
   {
     id: 4,
