@@ -8,6 +8,48 @@ import { useRef } from "react";
 const experiences = [
   {
     id: "exp1",
+    company: "SmarrtifAI",
+    logo: "/Portfolio-website-main/images/companies/Smarrtifai.png",
+    position: "Associate Consultant",
+    period: "May 2025 - Present",
+    location: "Remote",
+    description: [
+      "Working as an Associate Consultant specializing in AI solutions and strategy",
+      "Providing expert consultation on AI implementation and optimization",
+      "Developing and deploying cutting-edge AI solutions for clients"
+    ],
+    technologies: ["AI Strategy", "Machine Learning", "Consulting", "Solution Architecture"]
+  },
+  {
+    id: "exp2",
+    company: "Ernst & Young (EY)",
+    logo: "/Portfolio-website-main/images/companies/EY.png",
+    position: "AI Intern",
+    period: "May 2025 - Present",
+    location: "New Delhi, India",
+    description: [
+      "Working on the Government of India project 'AI interventions in the public sector' in the Department of Telecommunication",
+      "Developing AI solutions to enhance public sector service delivery and efficiency",
+      "Collaborating with government stakeholders to implement AI-driven transformations"
+    ],
+    technologies: ["AI", "Public Sector", "Government Tech", "Digital Transformation"]
+  },
+  {
+    id: "exp3",
+    company: "CollegeTips.in",
+    logo: "/Portfolio-website-main/images/companies/collegetips.png",
+    position: "Summer Intern",
+    period: "May 2025 - Present",
+    location: "Remote",
+    description: [
+      "Contributing to the development of educational technology solutions",
+      "Implementing AI-powered features to enhance student learning experience",
+      "Collaborating with cross-functional teams to improve platform functionality"
+    ],
+    technologies: ["EdTech", "Web Development", "AI Integration", "Educational Solutions"]
+  },
+  {
+    id: "exp4",
     company: "Labmentix",
     logo: "/Portfolio-website-main/images/companies/Labmentix.png",
     position: "AI and ML Intern",
@@ -21,7 +63,7 @@ const experiences = [
     technologies: ["Python", "Machine Learning", "Deep Learning", "Computer Vision"]
   },
   {
-    id: "exp2",
+    id: "exp5",
     company: "NIIT University",
     logo: "/Portfolio-website-main/images/companies/NIIT.png",
     position: "Teaching Assistant",
@@ -36,7 +78,7 @@ const experiences = [
     technologies: ["Image Processing", "Python", "OpenCV", "Computer Vision"]
   },
   {
-    id: "exp3",
+    id: "exp6",
     company: "1Stop",
     logo: "/Portfolio-website-main/images/companies/1Stop_logo_New.png",
     position: "Artificial Intelligence Intern",
@@ -70,7 +112,7 @@ const Experience = () => {
       ref={ref}
       style={{ opacity, scale, y }}
       id="experience"
-      className="py-16 md:py-24 bg-background/50 text-foreground"
+      className="py-16 md:py-24 bg-background/50 text-foreground scroll-mt-20"
     >
       <div className="container mx-auto px-4 md:px-6">
         <motion.h2

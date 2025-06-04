@@ -17,7 +17,7 @@ const About = () => {
       ref={ref}
       style={{ opacity, scale, y }}
       id="about"
-      className="py-16 md:py-24 bg-background/50 text-foreground"
+      className="py-16 md:py-24 bg-background/50 text-foreground scroll-mt-20"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
@@ -98,7 +98,7 @@ const About = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="md:w-1/2 flex justify-center"
           >
-            <div className="relative w-72 h-72 md:w-80 md:h-80">
+            <div className="relative w-80 h-80 md:w-96 md:h-96">
               {/* Frame behind the image */}
               <motion.div 
                 whileHover={{ scale: 1.05 }}

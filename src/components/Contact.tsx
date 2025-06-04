@@ -1,25 +1,20 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const ref = useRef(null);
+  const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: sectionRef,
     offset: ["start end", "end start"]
   });
 
@@ -27,52 +22,48 @@ const Contact = () => {
   const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.8, 1, 1, 0.8]);
   const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [50, 0, 0, -50]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    emailjs.send(
-      'service_axdlyu8',
-      'template_w908j0j',
-      {
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message
-      },
-      'myIKo90R0raiAclxh'
-    )
-    .then((result) => {
+    
+    if (!form.current) return;
+    
+    try {
+      setIsSubmitting(true);
+      
+      const result = await emailjs.sendForm(
+        'service_1ghpbcm', // Your EmailJS service ID
+        'template_i5trsby', // Your EmailJS template ID
+        form.current,
+        'myIKo90R0raiAclxh' // Your EmailJS public key
+      );
+
+      if (result.text === 'OK') {
         toast({
-          title: "Message Sent!",
-          description: "Thank you for reaching out. I'll get back to you soon.",
+          title: "Success!",
+          description: "Thank you for your message. I'll get back to you soon!",
         });
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-    }, (error) => {
-        toast({
-          title: "Error",
-          description: "Message could not be sent. Please try again later.",
-        });
-    });
+        form.current.reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again later.",
+        variant: "destructive",
+      });
+      console.error('EmailJS Error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <motion.section
-      ref={ref}
+      ref={sectionRef}
       style={{ opacity, scale, y }}
       id="contact"
-      className="py-16 md:py-24 bg-background/50 text-foreground"
+      className="py-16 md:py-24 bg-background/50 text-foreground scroll-mt-20"
     >
       <div className="container mx-auto px-4 md:px-6">
         <motion.h2
@@ -147,27 +138,25 @@ const Contact = () => {
           </div>
 
           <div className="md:col-span-2">
-            <form onSubmit={handleSubmit} className="space-y-4 bg-[#181f2a] p-6 rounded-lg shadow-sm">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-4 bg-[#181f2a] p-6 rounded-lg shadow-sm">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="name" className="text-white">Name</Label>
+                  <Label htmlFor="user_name" className="text-white">Name</Label>
                   <Input 
-                    id="name" 
-                    name="name" 
-                    value={formData.name} 
-                    onChange={handleChange} 
+                    id="user_name" 
+                    name="user_name" 
                     required 
+                    className="bg-background/50"
                   />
                 </div>
                 <div>
-                  <Label htmlFor="email" className="text-white">Email</Label>
+                  <Label htmlFor="user_email" className="text-white">Email</Label>
                   <Input 
-                    id="email" 
-                    name="email" 
+                    id="user_email" 
+                    name="user_email" 
                     type="email" 
-                    value={formData.email} 
-                    onChange={handleChange} 
                     required 
+                    className="bg-background/50"
                   />
                 </div>
               </div>
@@ -177,9 +166,8 @@ const Contact = () => {
                 <Input 
                   id="subject" 
                   name="subject" 
-                  value={formData.subject} 
-                  onChange={handleChange} 
                   required 
+                  className="bg-background/50"
                 />
               </div>
               
@@ -189,14 +177,17 @@ const Contact = () => {
                   id="message" 
                   name="message"
                   rows={4} 
-                  value={formData.message} 
-                  onChange={handleChange} 
                   required
+                  className="bg-background/50"
                 />
               </div>
               
-              <Button type="submit" className="w-full">
-                Send Message
+              <Button 
+                type="submit" 
+                className="w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </Button>
             </form>
           </div>

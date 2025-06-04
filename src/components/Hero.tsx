@@ -19,7 +19,7 @@ const Hero = () => {
       ref={ref}
       style={{ opacity, scale, y }}
       id="hero" 
-      className="pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-20 bg-background text-foreground"
+      className="pt-28 md:pt-32 lg:pt-36 pb-16 md:pb-20 bg-background text-foreground scroll-mt-20"
     >
       <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center">
         <motion.div 
@@ -58,9 +58,11 @@ const Hero = () => {
             transition={{ delay: 0.8, duration: 0.5 }}
             className="text-lg text-gray-300 max-w-2xl"
           >
-            Final year B.Tech student specializing in AI with a strong academic record and a portfolio of impactful  projects. <br />
-            Proficient in ML, DL, NLP, and CV, with hands-on experience in full-stack development (React, Flask, Node.js). 
-            I build scalable, intelligent solutions and leverage Gen-AI to accelerate development and deliver results efficiently.
+           Final-year B.Tech student specializing in AI, with hands-on experience in building and deploying 
+           real-world AI-powered applications. Skilled in Machine Learning, Deep Learning, NLP, and Computer 
+           Vision, with expertise in full-stack development using React, Node.js, and Django. Proficient in training
+           and fine-tuning LLMs, building scalable AI models, and delivering end-to-end products. I leverage Generative
+           AI tools to 10x development speed and turn ideas into impactful solutions, fast.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -89,7 +91,7 @@ const Hero = () => {
             <motion.div 
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
-              className="bg-portfolio-lightBlue w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-white shadow-lg"
+              className="bg-portfolio-lightBlue w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-white shadow-lg"
             >
               <img 
                 src="/Portfolio-website-main/images/profile/Formal 1.jpg" 

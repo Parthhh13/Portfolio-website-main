@@ -18,7 +18,7 @@ const Education = () => {
       ref={ref}
       style={{ opacity, scale, y }}
       id="education"
-      className="py-16 md:py-24 bg-background text-foreground"
+      className="py-16 md:py-24 bg-background text-foreground scroll-mt-20"
     >
       <div className="container mx-auto px-4 md:px-6">
         <motion.h2

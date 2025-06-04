@@ -7,32 +7,32 @@ const skillsCategories = [
   {
     title: "Artificial Intelligence & Machine Learning",
     icon: <Laptop className="h-6 w-6 text-portfolio-blue mb-2" />,
-    skills: ["Machine Learning", "Deep Learning", "NLP", "Computer Vision", "Predictive Analytics"]
+    skills: ["Machine Learning", "Deep Learning", "NLP", "Computer Vision", "Predictive Analytics", "LLM Fine-tuning", "AI Agents", "Neural Networks"]
   },
   {
     title: "Full-Stack Development",
     icon: <Code className="h-6 w-6 text-portfolio-blue mb-2" />,
-    skills: ["Python", "JavaScript", "React", "Node.js", "Express.js", "MongoDB", "HTML/CSS"]
+    skills: ["Python", "JavaScript", "React", "Node.js", "Express.js", "Django", "FastAPI", "MongoDB", "HTML/CSS"]
   },
   {
     title: "Data Science & Analysis",
     icon: <Database className="h-6 w-6 text-portfolio-blue mb-2" />,
-    skills: ["Data Structures", "Data Analysis", "Pandas", "NumPy", "Scikit-learn", "Data Visualization"]
+    skills: ["Data Structures", "Data Analysis", "Pandas", "NumPy", "Scikit-learn", "PyTorch", "TensorFlow", "Data Visualization"]
   },
   {
     title: "Tools & Technologies",
     icon: <BookOpen className="h-6 w-6 text-portfolio-blue mb-2" />,
-    skills: ["TensorFlow", "Flask", "Git", "Streamlit", "RESTful APIs", "FAISS"]
+    skills: [ "Flask", "Git", "Streamlit", "RESTful APIs", "FAISS", "Docker", "Kubernetes"]
   },
   {
     title: "Generative AI & Automation",
     icon: <Rocket className="h-6 w-6 text-portfolio-blue mb-2" />,
-    skills: ["Generative AI", "AI-powered content generation", "Automated coding", "Rapid prototyping", "Task automation"]
+    skills: ["Generative AI", "AI Agents Development", "LangChain", "Automated ML Pipelines", "AI-powered content generation", "Automated coding", "Rapid prototyping", "Task automation"]
   },
   {
-    title: "Soft Skills",
+    title: "Consulting & Soft Skills",
     icon: <Book className="h-6 w-6 text-portfolio-blue mb-2" />,
-    skills: ["Leadership", "Communication", "Teamwork", "Public Speaking","Problem Solving", "Time Management", "Theatre Arts"]
+    skills: ["AI Consultancy", "Technical Strategy", "Leadership", "Communication", "Project Management", "Problem Solving", "Time Management", "Theatre Arts"]
   }
 ];
 
@@ -52,7 +52,7 @@ const Skills = () => {
       ref={ref}
       style={{ opacity, scale, y }}
       id="skills"
-      className="py-16 md:py-24 bg-background/50 text-foreground"
+      className="py-16 md:py-24 bg-background/50 text-foreground scroll-mt-20"
     >
       <div className="container mx-auto px-4 md:px-6">
         <motion.h2
@@ -88,7 +88,7 @@ const Skills = () => {
                     {category.title}
                   </motion.h3>
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {category.skills.map((skill, i) => (
                     <motion.span
                       key={i}
@@ -96,7 +96,7 @@ const Skills = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: i * 0.1 }}
                       whileHover={{ scale: 1.05 }}
-                      className="px-3 py-1 bg-portfolio-lightBlue text-portfolio-blue rounded-full text-sm hover:bg-portfolio-lightBlue/40 transition-colors duration-300"
+                      className="px-3 py-1 bg-portfolio-lightBlue text-portfolio-blue rounded-full text-sm hover:bg-portfolio-lightBlue/40 transition-colors duration-300 text-center"
                     >
                       {skill}
                     </motion.span>
