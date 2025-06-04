@@ -16,15 +16,24 @@ const projects = [
   },
   {
     id: 2,
-    title: "RAG-Powered Multi-Agent Chatbot",
-    description: "Built a powerful chatbot system utilizing RAG (Retrieval-Augmented Generation), blockchain agents, and LLMs. Integrated FAISS for semantic search, routed queries intelligently using tools (calculator, dictionary), and deployed as interactive UI with Streamlit.",
-    technologies: ["RAG", "LLMs", "FAISS", "Streamlit", "Blockchain"],
+    title: "Pet Friendly City Website",
+    description: "Developed a comprehensive web platform that helps pet owners discover and navigate pet-friendly locations in cities. Features include interactive maps of pet-friendly parks, restaurants, and services, user reviews and ratings, emergency vet locator, and a community forum for pet owners to share experiences.",
+    technologies: ["React", "Node.js", "MongoDB",  "Express.js", "Tailwind CSS"],
     liveLink: "#",
     githubLink: "#",
-    image: "/Portfolio-website-main/images/projects/RAG.jpg"
+    image: "/Portfolio-website-main/images/projects/Pet.jpg"
   },
   {
     id: 3,
+    title: "Digibuddy chatbot",
+    description: "Developed a sophisticated chatbot system with React frontend and Django backend. Implemented advanced NLP capabilities using fine-tuned LLMs and RAG (Retrieval-Augmented Generation) for enhanced contextual understanding and accurate responses. Features include real-time chat interface, context-aware responses, and seamless integration of multiple tools.",
+    technologies: ["RAG", "LLMs", "Django", "React", "Tailwind CSS", "Python"],
+    liveLink: "#",
+    githubLink: "#",
+    image: "/Portfolio-website-main/images/projects/digibuddy.jpg"
+  },
+  {
+    id: 4,
     title: "Supermarket Inventory Tracking System with AI",
     description: "A capstone project that improves supermarket operations through AI. Designed and deployed a full-stack web application featuring an AI-driven inventory management system with predictive analytics for automated demand forecasting and smart restocking.",
     technologies: ["AI", "Full-Stack", "Predictive Analytics", "Inventory Management"],
@@ -33,7 +42,7 @@ const projects = [
     image: "/Portfolio-website-main/images/projects/Supermarket.png"
   },
   {
-    id: 4,
+    id: 5,
     title: "Plant Disease Classification using Computer Vision",
     description: "Personal project focused on plant disease classification using computer vision. Developed an AI-powered plant disease detection system using Computer Vision and ML models, achieving 95% accuracy. Built a frontend-integrated API for real-time image-based predictions.",
     technologies: ["Computer Vision", "ML", "API", "Image Processing"],
@@ -42,7 +51,7 @@ const projects = [
     image: "/Portfolio-website-main/images/projects/Plant.jpg"
   },
   {
-    id: 5,
+    id: 6,
     title: "IoT-based Fitness Tracker",
     description: "Designed and implemented a database management system to efficiently track cultural exchange programs across countries and institutions, enabling streamlined data organization and retrieval.",
     technologies: ["IoT", "Database Design", "Data Management"],
